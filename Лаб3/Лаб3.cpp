@@ -51,7 +51,9 @@ void View_Spis1(int kod, Spis1* t) {
 
 void Del_All(Spis1** _b, Spis1** _e)
 {
+#ifdef _MSC_VER
     _ASSERTE((_b != nullptr) && (_e != nullptr));
+#endif
     Spis1 *_cur = *_b;
     Spis1 *_del;
     while (_cur != nullptr)
@@ -70,7 +72,9 @@ void Del_All(Spis1** _b, Spis1** _e)
 ///   bEvenOdd   - если == true, то удалить чётные, иначе - нечётные
 void Dell_Even_Odd(Spis1 **_b, Spis1** _e, bool bEvenOdd)
 {
+#ifdef _MSC_VER
     _ASSERTE((_b != nullptr) && (_e != nullptr));
+#endif
 
     Spis1 *_cur = *_b;
     Spis1 *_del;

@@ -142,16 +142,22 @@ int main()
         std::cin >> kod;
         switch (kod) {
 
-        case 1: if (begin != NULL) {
+        case 1:/* if (begin != NULL) {
             std::cout << "Clear Memory!" << std::endl;
             break;
-        }
-              std::cout << "Begin Info = ";
-              std::cin >> in;
-              Create_Spis1(&begin, &end, in);
-              std::cout << "Creat Begin = " << begin->info << std::endl;
-              break;
-
+        }*/ // то что сверху - плохой тон: - два break в одном case; - не форматировано
+            if (begin != NULL)
+            {
+                std::cout << "Очистите список перед созданием!" << std::endl;
+            }
+            else
+            {
+                std::cout << "Begin Info = ";
+                std::cin >> in;
+                Create_Spis1(&begin, &end, in);
+                std::cout << "Creat Begin = " << begin->info << std::endl;
+            }
+            break;
         case 2:
             if (begin != nullptr)
             {
@@ -170,23 +176,29 @@ int main()
             }
             break;
 
-        case 3: if (!begin) {
+        case 3:/* if (!begin) {
             std::cout << "Stack Pyst!" << std::endl;
             break;
-        }
-              std::cout << "View Begin-0,View End-1:";
-              std::cin >> kod1;
-              if (kod1 == 0) {
-                  t = begin;
-                  std::cout << "-- Begin --" << std::endl;
-              }
-              else {
-                  t = end;
-                  std::cout << "--- End --" << std::endl;
-              }
-              View_Spis1(kod1, t);
-              break;
-
+        }*/ // то что сверху - плохой тон: - два break в одном case; - не форматировано
+            if (begin == NULL)
+            {
+                std::cout << "Список пуст!" << std::endl;
+            }
+            else
+            {
+                std::cout << "View Begin-0,View End-1:";
+                std::cin >> kod1;
+                if (kod1 == 0) {
+                    t = begin;
+                    std::cout << "-- Begin --" << std::endl;
+                }
+                else {
+                    t = end;
+                    std::cout << "--- End --" << std::endl;
+                }
+                View_Spis1(kod1, t);
+            }
+            break;
         case 4:
             Del_All(&begin, &end);
             std::cout << "Memory Free!" << std::endl;
